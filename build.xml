@@ -7,14 +7,16 @@
     <property name="result.javaclasses.dir" location="${result.dir}/classes"/>
     <property name="result.testclasses.dir" location="${result.dir}/testclasses"/>
 
-	 <path id="NecessaryLibraries">
-	        <pathelement location="./UsedLibraries/junit-4.12.jar"/>
-	 	<!-- <pathelement location="C:\Program Files\Java\jdk1.8.0_211\bin\java.exe"/> -->
-	        <!--matcher-->
-	        <pathelement location="./UsedLibraries/hamcrest-core-1.3.jar"/>
-	        <!--<pathelement location="./UsedLibraries/jacocoant.jar"/>-->
-	    </path>
 
+
+
+
+    <path id="NecessaryLibraries">
+        <pathelement location="./UsedLibraries/junit-4.12.jar"/>
+        <!--matcher-->
+        <pathelement location="./UsedLibraries/hamcrest-core-1.3.jar"/>
+        <!--<pathelement location="./UsedLibraries/jacocoant.jar"/>-->
+    </path>
 
 
     <target name="compile">
@@ -27,11 +29,11 @@
     <target name="compile-testcases" depends="compile">
         <mkdir dir="${result.testclasses.dir}"/>
         <javac srcdir="${src.test.dir}"  destdir="${result.testclasses.dir}" debug="true" includeantruntime="false">
-        	 <classpath>
+            <classpath>
 
-        	                <path refid="NecessaryLibraries"/>
-        	                <pathelement location="${result.javaclasses.dir}"/>
-        	 </classpath>
+                <path refid="NecessaryLibraries"/>
+                <pathelement location="${result.javaclasses.dir}"/>
+            </classpath>
         </javac>
     </target>
 
@@ -46,7 +48,7 @@
             <formatter type="brief" usefile="false"/>
             <batchtest >
                 <fileset dir="${result.testclasses.dir}" >
-                     <include name="**/*TestingAddFunction"/>
+                     <include name="**/*Test.class"/>
                 </fileset>
             </batchtest>
 
@@ -56,4 +58,3 @@
 
 
 </project>
-
