@@ -25,6 +25,7 @@ public class CalTest {
 		assertTrue("both input are negative ->output should be negative", add<0);
 
 	}
+	@Test
 	public void Both_Zero() {
 		x=new Calculator();
 
