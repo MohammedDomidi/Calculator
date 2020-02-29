@@ -1,5 +1,9 @@
+package main.test;
+
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
+
+import main.java.Calculator;
 
 public class CalTest {
 	Calculator x;
